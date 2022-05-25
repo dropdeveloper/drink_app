@@ -21,11 +21,11 @@ class ItemContainer extends StatelessWidget {
           children: [
             Expanded(
               child: Hero(
-                tag: "item${itemData.drinkId}",
+                tag: "item${itemData.idDrink}",
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: CachedNetworkImage(
-                    imageUrl: itemData.drinkThumbImage!,
+                    imageUrl: itemData.strDrinkThumb!,
                     errorWidget: (context, url, error) =>
                         const Icon(Icons.error),
                   ),
@@ -47,16 +47,16 @@ class ItemContainer extends StatelessWidget {
                       children: [
                         //Text(itemData.drinkName!, style: itemNameTextStyle),
                         SubstringHighlight(
-                          text: itemData.drinkName!,
+                          text: itemData.strDrink!,
                           term: searchKey,
                           textStyle: itemNameTextStyle,
                           textStyleHighlight: itemNameHighlightTextStyle,
                         ),
-                        Text(itemData.categoryName!,
+                        Text(itemData.strCategory!,
                             style: categoryNameTextStyle),
                       ],
                     ),
-                    Text(itemData.instructions!,
+                    Text(itemData.strInstructions!,
                         maxLines: 3, style: itemInstructionsTextStyle),
                   ],
                 ),
